@@ -55,6 +55,7 @@ public class Similarity {
         for (int i : bVec) {
             p3 += (i * i);
         }
+
         p3 = (float) Math.sqrt(p3);
 
         return ((float) p1) / (p2 * p3);

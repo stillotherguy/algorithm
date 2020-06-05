@@ -9,8 +9,13 @@ import java.util.List;
  */
 class FindOrder {
 
+    // 存储有向图
     private List<List<Integer>> edges;
+
+    //
     private int[] visited;
+
+    //
     private boolean invalid = false;
     private int[] res;
     private int index;
@@ -38,6 +43,7 @@ class FindOrder {
         if (invalid) {
             return new int[0];
         }
+
         return res;
     }
 
@@ -46,6 +52,7 @@ class FindOrder {
         for (int v : edges.get(u)) {
             if (visited[v] == 0) {
                 dfs(v);
+
                 if (invalid) {
                     return;
                 }
@@ -56,5 +63,12 @@ class FindOrder {
 
         visited[u] = 2;
         res[index--] = u;
+    }
+
+    public static void main(String[] args) {
+        int n = 4;
+        int[][] pres = new int[][]{new int[]{1, 0}, new int[]{2, 0}, new int[]{3, 1}, new int[]{3, 2}};
+
+        new FindOrder().findOrder(n, pres);
     }
 }

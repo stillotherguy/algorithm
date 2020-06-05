@@ -8,13 +8,19 @@ import algorithm.link.model.Node;
  */
 public class Reverse {
 
-    public void reverse(Node header) {
-        if (header == null || header.next == null) {
-            return;
-        }
+	public void reverse(Node head) {
+		Node cur = null;
+		Node prev = head;
+		while (prev != null) {
+            Node next = head.next;
+            prev.next = cur;
 
-        Node current = header.next;
-        Node next = current.next;
-        //while ()
-    }
+            cur = prev;
+            prev = next;
+		}
+	}
+
+	public static void main(String[] args) {
+		System.out.println("()".substring(2, 2).length());
+	}
 }

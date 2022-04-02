@@ -1,6 +1,6 @@
 package algorithm.bit;
 
-import sun.jvm.hotspot.utilities.Assert;
+import org.springframework.util.Assert;
 
 /**
  * @author Ethan Zhang
@@ -10,13 +10,13 @@ public class OneSolitaryNumber {
 
     public static void main(String[] args) {
         int[] input = null;
-        Assert.that(solitary(input) == -1, "illegal result");
+        Assert.isTrue(solitary(input) == -1, "illegal result");
 
         input = new int[0];
-        Assert.that(solitary(input) == -1, "illegal result");
+        Assert.isTrue(solitary(input) == -1, "illegal result");
 
         input = new int[]{111, 111, 222, 222, 333, 333, 444, 444, 555};
-        Assert.that(solitary(input) == 555, "illegal result");
+        Assert.isTrue(solitary(input) == 555, "illegal result");
     }
 
     public static int solitary(int[] nums) {

@@ -20,6 +20,7 @@ public class 中序遍历 {
         TreeNode root = BinaryTree.create(Lists.newArrayList(1, 2, 3, 4, 5, 6, 7));
 
         inOrder1(root);
+        inOrder2(root);
     }
 
     public static void inOrder1(TreeNode root) {
@@ -45,11 +46,11 @@ public class 中序遍历 {
                 stack.push(root);
                 root = root.left;
             } else {
-                TreeNode left = stack.pop();
+                root = stack.pop();
 
-                System.out.println(left.value);
+                System.out.println(root.value);
 
-                stack.push(left.right);
+                stack.push(root.right);
             }
         }
     }

@@ -1,4 +1,4 @@
-package algorithm.window;
+package algorithm.sliding_window;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;

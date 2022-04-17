@@ -28,7 +28,7 @@ public class BinaryTree {
 
     public static TreeNode create(List<Integer> nums) {
         BinaryTree binaryTree = new BinaryTree();
-        binaryTree.root = createRecursive(Lists.newArrayList(1, 2, 3, 4, 5, 6, 7), binaryTree.root, 0);
+        binaryTree.root = createRecursive(nums, binaryTree.root, 0);
 
         return binaryTree.root;
     }

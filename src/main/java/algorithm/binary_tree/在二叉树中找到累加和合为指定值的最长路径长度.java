@@ -51,6 +51,7 @@ public class 在二叉树中找到累加和合为指定值的最长路径长度 
         maxLen = getMaxLenRecursive(head.left, target, sum, level + 1, maxLen, cache);
         maxLen = getMaxLenRecursive(head.right, target, sum, level + 1, maxLen, cache);
 
+        // 防止冲突
         if (level == cache.get(sum)) {
             cache.remove(sum);
         }

@@ -13,8 +13,12 @@ public class 未排序数组中累加和为给定值的最长子数组系列问�
         int[] array = new int[]{1, 2, 3, -3, 3};
 
         System.out.println(maxLength(array, 6));
+        System.out.println(maxLength(array, -100));
     }
 
+    /**
+     * @see algorithm.binary_tree.在二叉树中找到累加和合为指定值的最长路径长度
+     */
     public static int maxLength(int[] array, int target) {
         if (array == null || array.length == 0) {
             return 0;
@@ -31,6 +35,7 @@ public class 未排序数组中累加和为给定值的最长子数组系列问�
                 maxLen = Math.max(maxLen, i - cache.get(sum - target));
             }
 
+            // TODO 顺序有关系吗
             if (!cache.containsKey(sum)) {
                 cache.put(sum, i);
             }

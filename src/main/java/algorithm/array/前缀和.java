@@ -8,11 +8,11 @@ package algorithm.array;
  * @author Ethan Zhang
  * @date 2022/1/20
  */
-public class NumArray {
+public class 前缀和 {
 
     private final int[] nums;
 
-    public NumArray(int[] nums) {
+    public 前缀和(int[] nums) {
         this.nums = new int[nums.length + 1];
 
         int sum = this.nums[0];
@@ -32,7 +32,7 @@ public class NumArray {
     }
 
     public static void main(String[] args) {
-        System.out.println(new NumArray(new int[]{1, 2, 3, 4, 5}).sumRange(0, 4));
-        System.out.println(new NumArray(new int[]{1, 2, 3, 4, 5}).sumRange(0, 2));
+        System.out.println(new 前缀和(new int[]{1, 2, 3, 4, 5}).sumRange(0, 4));
+        System.out.println(new 前缀和(new int[]{1, 2, 3, 4, 5}).sumRange(0, 2));
     }
 }

@@ -6,7 +6,7 @@ package algorithm.array;
  * @author Ethan Zhang
  * @date 2022/3/20
  */
-public class 数组归并排序 {
+public class 归并排序 {
 
     public void sort(int[] nums) {
         if (nums == null) {

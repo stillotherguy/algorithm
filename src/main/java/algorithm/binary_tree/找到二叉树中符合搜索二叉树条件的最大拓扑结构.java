@@ -1,14 +1,22 @@
 package algorithm.binary_tree;
 
 import algorithm.utils.TreeNode;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author Ethan Zhang
  * @date 2022/4/19
  */
 public class 找到二叉树中符合搜索二叉树条件的最大拓扑结构 {
+
+    public static void main(String[] args) {
+        String[] strs = StringUtils.split("[UG1, UG2, UG3]", "[] ,");
+
+        System.out.println(Arrays.toString(strs));
+    }
 
     public int bstTopoSize1(TreeNode head) {
         if (head == null) {

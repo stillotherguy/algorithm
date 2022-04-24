@@ -24,9 +24,9 @@ public class 二分查找 {
             if (array[mid] == target) {
                 return mid;
             } else if (array[mid] < target) {
-                left = mid;
+                left = mid + 1;
             } else {
-                right = mid;
+                right = mid - 1;
             }
         }
 

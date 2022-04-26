@@ -1,6 +1,7 @@
 package algorithm.data_structure;
 
 import algorithm.utils.TreeNode;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import java.util.List;
 
@@ -27,10 +28,17 @@ public class BinaryTree {
     }
 
     public static TreeNode create(List<Integer> nums) {
+        Preconditions.checkNotNull(nums);
+
         BinaryTree binaryTree = new BinaryTree();
         binaryTree.root = createRecursive(nums, binaryTree.root, 0);
 
         return binaryTree.root;
     }
 
+    public static TreeNode create(Integer... nums) {
+        Preconditions.checkNotNull(nums);
+
+        return create(Lists.newArrayList(nums));
+    }
 }

@@ -7,7 +7,7 @@ import java.util.List;
  * @author Ethan Zhang
  * @date 2022/4/12
  */
-public class SortedBinaryTree {
+public class BinarySearchTree {
 
     private TreeNode root;
 
@@ -52,7 +52,7 @@ public class SortedBinaryTree {
             return null;
         }
 
-        SortedBinaryTree binaryTree = new SortedBinaryTree();
+        BinarySearchTree binaryTree = new BinarySearchTree();
         for (Integer value : values) {
             binaryTree.add(value);
         }

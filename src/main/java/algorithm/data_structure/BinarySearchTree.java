@@ -1,6 +1,8 @@
 package algorithm.data_structure;
 
 import algorithm.utils.TreeNode;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.Lists;
 import java.util.List;
 
 /**
@@ -48,9 +50,7 @@ public class BinarySearchTree {
     }
 
     public static TreeNode create(List<Integer> values) {
-        if (values == null || values.isEmpty()) {
-            return null;
-        }
+        Preconditions.checkNotNull(values);
 
         BinarySearchTree binaryTree = new BinarySearchTree();
         for (Integer value : values) {
@@ -58,6 +58,12 @@ public class BinarySearchTree {
         }
 
         return binaryTree.root;
+    }
+
+    public static TreeNode create(Integer... values) {
+        Preconditions.checkNotNull(values);
+
+        return create(Lists.newArrayList(values));
     }
 
     public TreeNode getRoot() {

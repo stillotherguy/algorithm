@@ -4,6 +4,8 @@ import algorithm.data_structure.BinarySearchTree;
 import algorithm.data_structure.BinaryTree;
 import algorithm.utils.TreeNode;
 import com.google.common.collect.Lists;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * @author Ethan Zhang
@@ -54,5 +56,36 @@ public class 判断一颗二叉树是否为搜索二叉树和完全二叉树 {
         }
 
         return result;
+    }
+
+    public static boolean isCST(TreeNode head) {
+        if (head == null) {
+            return true;
+        }
+
+        boolean leaf = false;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(head);
+        while (!queue.isEmpty()) {
+            head = queue.poll();
+
+            TreeNode left = head.left;
+            TreeNode right = head.right;
+            if ((leaf && (left != null || right != null)) || (left == null && right != null)) {
+                return false;
+            }
+
+            if (left != null) {
+                queue.offer(left);
+            }
+
+            if (right != null) {
+                queue.offer(right);
+            } else {
+                leaf = true;
+            }
+        }
+
+        return true;
     }
 }

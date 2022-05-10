@@ -1,10 +1,12 @@
 package algorithm.binary_tree;
 
+import algorithm.data_structure.BinaryTree;
 import algorithm.utils.TreeNode;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import org.springframework.util.Assert;
 
 /**
  * @author Ethan Zhang
@@ -13,6 +15,15 @@ import java.util.Set;
 public class 在二叉树中找到两个节点的最近公共祖先 {
 
     public static void main(String[] args) {
+        TreeNode head = BinaryTree.create(1, 2, 3, 4, 5, 6, 7);
+
+        TreeNode parent = findParent1(head, new TreeNode(2), new TreeNode(4));
+
+        Assert.isTrue(parent.equals(new TreeNode(2)));
+
+        parent = findParent1(head, new TreeNode(2), new TreeNode(7));
+
+        Assert.isTrue(parent.equals(new TreeNode(1)));
     }
 
     public static TreeNode findParent(TreeNode head, TreeNode o1, TreeNode o2) {

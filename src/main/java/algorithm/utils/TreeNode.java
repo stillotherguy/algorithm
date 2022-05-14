@@ -22,6 +22,25 @@ public class TreeNode {
         this.right = right;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        TreeNode treeNode = (TreeNode) o;
+
+        return value == treeNode.value;
+    }
+
+    @Override
+    public int hashCode() {
+        return value;
+    }
+
     public int getValue() {
         return value;
     }

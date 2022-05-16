@@ -11,26 +11,37 @@ import java.util.Queue;
 public class 两个链表相加 {
 
     public Node add(Node head1, Node head2) {
-        if (head1 == null || head2 == null) {
-            return head1 == null ? head2 : head1;
+        if (head1 == null) {
+            return head2;
         }
 
-        Queue<Node> queue = new LinkedList<>();
-        Node cur = head1;
-        while (cur != null) {
-            queue.add(cur);
-            cur = cur.next;
+        if (head2 == null) {
+            return head1;
         }
 
-        cur = head2;
-        while (cur != null) {
-            Node adder = queue.poll();
-            if (adder != null) {
+        int adder = 0;
+        Node dummy = new Node(0);
+        Node head = dummy;
+        while (head1 != null || head2 != null || adder != 0) {
+            int val1 = head1 == null ? 0 : head1.value;
+            int val2 = head2 == null ? 0 : head2.value;
 
+            int sum = val1 + val2 + adder;
+            head.next = new Node(sum % 10);
+            head = head.next;
+
+            adder = sum / 10;
+
+            if (head1 != null) {
+                head1 = head1.next;
             }
 
-            cur = cur.next;
+            if (head2 != null) {
+                head2 = head2.next;
+            }
         }
+
+        return dummy.next;
     }
 
 
